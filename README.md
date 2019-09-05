@@ -5,7 +5,7 @@ The Nginx base image.
 ## Modifications
 
 `output-to-JSON`  
-Override to reshape JSON a
+Override to reshape JSON or parse text log.
 
 ## Tags
 
