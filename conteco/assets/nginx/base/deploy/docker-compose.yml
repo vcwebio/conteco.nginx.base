@@ -1,0 +1,10 @@
+---
+version: '3'
+services:
+
+  service:
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.${CONTECO_TYPE}.${CONTECO_NAME}:${CONTECO_TAG}
+    ports:
+      - "8080:80"
+    deploy:
+      mode: replicated
