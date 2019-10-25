@@ -5,14 +5,22 @@ services:
 # START SERVICE nginx.base
   nginx:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.nginx.base:1.17.3
-    environment: [${CONTECO_DC_NGINX_ENVIRONMENT}] 
-    command: [${CONTECO_DC_NGINX_COMMAND}]
-    volumes: [${CONTECO_DC_NGINX_VOLUMES}]
+    environment: [] 
+    command: []
+    volumes: []
     ports: [${CONTECO_DC_NGINX_PORTS}]
     networks: [${CONTECO_DC_NGINX_NETWORKS}]
-    deploy: {${CONTECO_DC_NGINX_DEPLOY}}
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources: 
+        limits: 
+          cpus: '${CONTECO_DC_NGINX_DEPLOY_RESOURCES_LIMITS_CPUS}'
+          memory: ${CONTECO_DC_NGINX_DEPLOY_RESOURCES_LIMITS_MEMORY}
+        reservations:
+          cpus: '${CONTECO_DC_NGINX_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
+          memory: ${CONTECO_DC_NGINX_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}
 # END SERVICE nginx.base
 
-networks:
-  ${CONTECO_DC_NGINX_NETWORKS}:
-    external: true
+volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
+networks: {${CONTECO_DC_GLOBAL_NETWORKS}}
