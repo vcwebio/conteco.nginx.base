@@ -15,8 +15,8 @@ COPY ./ /conteco/repo/
 ##### END image/Dockerfile/conteco #####
 
 ##### BEGIN image/Dockerfile/build-instructions #####
-ENV CONTECO_ENTRYPOINT "/infometis/bin/nginx/base/entrypoint"
-COPY ./conteco/assets/${CONTECO_TYPE}/${CONTECO_NAME}/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+ENV CONTECO_ENTRYPOINT "/conteco/bin/nginx/base/entrypoint"
+COPY ./conteco/configs/${CONTECO_NAME}/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 ##### END image/Dockerfile/build-instructions #####
 
 ##### BEGIN image.base/Dockerfile/env-labels-footer #####
