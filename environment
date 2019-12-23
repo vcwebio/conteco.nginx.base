@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export CONTECO_LABEL="nginx.base - ContEco"
-export CONTECO_DESCRIPTION="See `conteco.docs.overview` for more information on the ContEco ecosystem."
+export CONTECO_DESCRIPTION="Nginx Base image, with minor configuration change."
 
 export CONTECO_TYPE="nginx"
 export CONTECO_NAME="base"

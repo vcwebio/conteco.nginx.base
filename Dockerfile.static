@@ -35,7 +35,7 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.tag="1.17.3" \
       io.vcweb.base="external.nginx:1.17.3" \
       io.vcweb.build="image-base" \
-      io.vcweb.label="Conteco Nginx base" \
-      io.vcweb.description="The Nginx base image." \
+      io.vcweb.label="nginx.base - ContEco" \
+      io.vcweb.description="See  for more information on the ContEco ecosystem." \
       io.vcweb.docker.cmd.help="docker run vcwebio/conteco.nginx.base --help"
 ##### END image.base/Dockerfile/env-labels-footer #####
