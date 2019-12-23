@@ -1,13 +1,14 @@
-# The Conteco Nginx base
+# `nginx.base` - ContEco
 
-The Nginx base image. 
+Nginx Base image, with minor configuration change.
+See `conteco.docs.overview` for more information on the ContEco ecosystem.
 
-## Modifications
+## Configuration Changes
 
-`output-to-JSON`  
-Override to reshape JSON or parse text log.
+The base image has the following configuration changes:
+- Changed log format to ContEco compatible JSON format.
+- custom `output-to-JSON` implementation to reshape JSON or parse text log.
 
 ## Tags
 
 * 1.17.3
-* 1.15.12  
