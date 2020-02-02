@@ -9,7 +9,7 @@ services:
     command: []
     volumes: [${CONTECO_DC_NGINX_VOLUMES}]
     ports: [81:80]
-    networks: [nginx_overlay]
+    networks: [${CONTECO_ECOSYSTEM_RUNTIME}_overlay, ${CONTECO_TYPE}_overlay]
     deploy:
       mode: replicated
       resources:
@@ -23,4 +23,4 @@ services:
 # END SERVICE nginx.base
 
 volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
-networks: {nginx_overlay: { external: true }}
+networks: {${CONTECO_ECOSYSTEM_RUNTIME}_overlay: { external: true }, ${CONTECO_TYPE}_overlay: { external: true }}
