@@ -7,7 +7,7 @@ services:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.nginx.base:1.17.3
     environment: []
     command: []
-    volumes: [${CONTECO_DC_NGINX_VOLUMES}]
+    volumes: []
     ports: [81:80]
     networks: [${CONTECO_NETWORKGLOBAL}_overlay, ${CONTECO_NETWORKLOCAL}_overlay]
     deploy:
@@ -22,5 +22,5 @@ services:
       labels: [${CONTECO_DC_NGINX_DEPLOY_LABELS}]
 # END SERVICE nginx.base
 
-volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
+volumes: {}
 networks: {${CONTECO_NETWORKGLOBAL}_overlay: { external: true }, ${CONTECO_NETWORKLOCAL}_overlay: { external: true }}
