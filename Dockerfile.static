@@ -1,6 +1,6 @@
 ##### BEGIN image.base/Dockerfile/image-header #####
 FROM vcwebio/conteco.image.wrapper AS wrapper
-FROM vcwebio/conteco.external.nginx:1.17.3 AS base
+FROM vcwebio/conteco.external.nginx:1.19.3 AS base
 ##### END image.base/Dockerfile/image-header #####
 
 ##### BEGIN image.base/Dockerfile/conteco #####
@@ -24,16 +24,16 @@ ENV CONTECO_REALM="vcwebio" \
     CONTECO_ECOSYSTEM="conteco" \
     CONTECO_TYPE="nginx" \
     CONTECO_NAME="base" \
-    CONTECO_TAG="1.17.3" \
-    CONTECO_BASE="external.nginx:1.17.3" \
+    CONTECO_TAG="1.19.3" \
+    CONTECO_BASE="external.nginx:1.19.3" \
     CONTECO_BUILD="image-base"
 LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.realm="vcwebio" \
       io.vcweb.ecosystem="conteco" \
       io.vcweb.type="nginx" \
       io.vcweb.name="base" \
-      io.vcweb.tag="1.17.3" \
-      io.vcweb.base="external.nginx:1.17.3" \
+      io.vcweb.tag="1.19.3" \
+      io.vcweb.base="external.nginx:1.19.3" \
       io.vcweb.build="image-base" \
       io.vcweb.label="nginx.base - ContEco" \
       io.vcweb.description="Nginx Base image, with minor configuration change." \

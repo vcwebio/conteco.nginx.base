@@ -5,7 +5,7 @@ export CONTECO_DESCRIPTION="Nginx Base image, with minor configuration change."
 
 export CONTECO_TYPE="nginx"
 export CONTECO_NAME="base"
-export CONTECO_TAG="1.17.3"
+export CONTECO_TAG="1.19.3"
 
-export CONTECO_BASE="external.nginx:1.17.3"
+export CONTECO_BASE="external.nginx:1.19.3"
 export CONTECO_BUILD="image-base"

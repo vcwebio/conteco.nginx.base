@@ -4,7 +4,7 @@ services:
 
 # START SERVICE nginx.base
   nginx:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.nginx.base:1.17.3
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.nginx.base:1.19.3
     environment: []
     command: []
     volumes: []

@@ -11,4 +11,4 @@ The base image has the following configuration changes:
 
 ## Tags
 
-* 1.17.3
+* 1.19.3
