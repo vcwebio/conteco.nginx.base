@@ -1,12 +1,6 @@
 ##### BEGIN image.base/Dockerfile/image-header #####
-FROM vcwebio/conteco.image.wrapper AS wrapper
-FROM vcwebio/conteco.external.nginx:1.19.3 AS base
+FROM vcwebio/conteco.image.wrapper AS base
 ##### END image.base/Dockerfile/image-header #####
-
-##### BEGIN image.base/Dockerfile/conteco #####
-COPY --from=wrapper /conteco/ /conteco/
-ENTRYPOINT ["/conteco/bin/image/wrapper/entrypoint"]
-##### END image.base/Dockerfile/conteco #####
 
 ##### BEGIN image/Dockerfile/conteco #####
 COPY ./conteco/ /conteco/
@@ -14,18 +8,13 @@ RUN chmod -R +x /conteco/bin && rm -rf /conteco/repo
 COPY ./ /conteco/repo/
 ##### END image/Dockerfile/conteco #####
 
-##### BEGIN image/Dockerfile/build-instructions #####
-ENV CONTECO_ENTRYPOINT "/conteco/bin/nginx/base/entrypoint"
-COPY ./conteco/configs/etc/nginx/nginx.conf /etc/nginx/nginx.conf
-##### END image/Dockerfile/build-instructions #####
-
 ##### BEGIN image.base/Dockerfile/env-labels-footer #####
 ENV CONTECO_REALM="vcwebio" \
     CONTECO_ECOSYSTEM="conteco" \
     CONTECO_TYPE="nginx" \
     CONTECO_NAME="base" \
     CONTECO_TAG="1.19.3" \
-    CONTECO_BASE="external.nginx:1.19.3" \
+    CONTECO_BASE="controlplane.base" \
     CONTECO_BUILD="image-base"
 LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.realm="vcwebio" \
@@ -33,7 +22,7 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.type="nginx" \
       io.vcweb.name="base" \
       io.vcweb.tag="1.19.3" \
-      io.vcweb.base="external.nginx:1.19.3" \
+      io.vcweb.base="controlplane.base" \
       io.vcweb.build="image-base" \
       io.vcweb.label="nginx.base - ContEco" \
       io.vcweb.description="Nginx Base image, with minor configuration change." \
